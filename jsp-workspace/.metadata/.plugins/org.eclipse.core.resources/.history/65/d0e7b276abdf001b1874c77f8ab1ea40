@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_입력</title>
+</head>
+<body>
+    
+    <h3># imput태크를 이용해 사용자로부터 다양한 입력을 받을 수 있다</h3>
+
+    <table border = "2">
+        <tr>
+            <th>Type</th>
+            <th>입력란</th>
+            <th>설명</th>
+            <th>용도</th>
+        </tr>
+        <tr>
+            <td>type="text"</td>
+            <td><input type="text"></td>
+            <td>일반적인 텍스트를 입력받는 칸</td>
+            <td>아이디, 글 제목 등</td>
+        </tr>
+        <tr>
+            <td>type="password"</td>
+            <td><input type = "password"></td>
+            <td>텍스트를 가려주는 입력 칸</td>
+            <td>비밀번호</td>
+        </tr>
+        <tr>
+            <td>type="radio"</td>
+            <td>
+                <!-- name 속성으로 카테고리를 지정해주어야 함 -->
+                <!-- label에 id를 넣어서 라벨을 눌러도 라디오버튼이 눌리게 할 수 있다 -->
+                <!-- name : 그룹지정, id : 라디오버튼의 id -->
+                <input type="radio" name="flavor" id = "tuna">
+                <label for="tuna">참치마요</label><br>
+                <input type="radio" name="flavor" id = "bibim">
+                <label for="bibim">전주비빔</label><br>
+                <input type="radio" name="flavor" id = "spam" checked>
+                <label for="spam">스팸볶음</label><br>
+                <input type="radio" name="flavor" id = "gogi">
+                <label for="gogi">고추장불고기</label><br>
+                <hr>
+                <input type="radio" name="size"> Family<br>
+                <input type="radio" name="size"> Large<br>
+                <input type="radio" name="size"> Regular<br>
+            </td>
+            <td>여러가지 중 하나만 선택할 수 있는 버튼</td>
+            <td>성별, 나이대 등 하나만 선택해야하는 속성</td>
+        </tr>
+        <tr>
+            <td>type="checkbox"</td>
+            <td>
+                <input type="checkbox" name="swim" id="freestyle">
+                <label for="freestyle">자유형</label><br>
+                <input type="checkbox" name="swim" id="frog">
+                <label for="frog">평영</label><br>
+                <input type="checkbox" name="swim" id="backstroke">
+                <label for="backstroke">배영</label><br>
+                <input type="checkbox" name="swim" id="butterfly">
+                <label for="butterfly">접영</label><br>
+            </td>
+            <td>여러가지 항목 중 여러개를 선택할 수 있는 버튼</td>
+            <td>관심분야 등 여러개를 선택해야 하는 속성</td>
+        </tr>
+        <tr>
+            <td>type="date"</td>
+            <td><input type="date"></td>
+            <td>날짜를 입력받는 칸</td>
+            <td>예약 등</td>
+        </tr>
+        <tr>
+            <td>type="email"</td>
+            <td><input type="email"></td>
+            <td>이메일을 입력받는 칸, 약간의 이메일 형식 검사를 해준다</td>
+            <td>이메일</td>
+        </tr>
+        <tr>
+            <td>type="color"</td>
+            <td><input type="color"></td>
+            <td>색상</td>
+            <td>색상</td>
+        </tr>
+        <tr>
+            <td>&lt;textarea&gt;</td>
+            <td><textarea cols="30" rows="10"></textarea></td>
+            <td>아주 긴 내용의 텍스트를 입력할 수 있다</td>
+            <td>글 내용, 문의 내용 등</td>
+        </tr>
+        <tr>
+            <td>&lt;select&gt;</td>
+            <td>
+                <select>
+                    <option value="">Account</option>
+                    <option value="">Clerk</option>
+                    <option value="">CEO</option>
+                    <option value="">IT Programmer</option>
+                </select>
+            </td>
+            <td>사용자가 여러 옵션 중 하나를 선택할 수 있다</td>
+            <td>콤보박스와 같다</td>
+        </tr>
+    </table>
+
+    <h3># 사용자의 선택을 전송하기 위한 절차</h3>
+    
+    <ol>
+        <li>모든 데이터는 &lt;Form&gt;단위로 전송되어야 한다</li>
+        <li>해당 from에서 submit이 발생하면 입력된 모든 데이터를 전송한다</li>
+        <li>전송하고자 하는 데이터에는 반드시 name 속성이 있어야 한다</li>
+        <li>데이터를 전송할 때 name속성이 되고 value 속성이 값이 된다</li>
+        <li>
+            GET방식으로 전송하면 URL뒤에 데이터가 붙어서 전송된다
+            http://host:port/uri?name1=value1&name2=value2
+        </li>
+        <li>그 외의 방식은 데이터가 주소에 노출되지 않는다</li>
+    </ol>
+
+    <h3># form 태그</h3>
+
+    <ul>
+        <li>action 속성: submit이 발생했을 시 요청보낼 URL</li>
+        <li>method 속성: GET/POST/PUT/PATCH.. 등의 HTTP데이터 전송방식 설정</li>
+    </ul>
+
+    <form action="" method="GET">
+        ID : <input name = "user_id" type = "text">
+        PASSWORD : <input name="user_password" type="password">
+        <input type="submit" value="SIGN IN">
+    </form>
+
+    <h4>선호하는 수영 경기</h4>
+    <form>
+        <!-- 
+            checkbox, radio 등 사용자가 값을 입력하지 못하고
+            선택하는 input에는 value 속성을 지정해두어야
+            무엇을 선택했는지 알 수 있다
+         -->
+        <input type="checkbox" name="swim" id="freestyle" value="freestyle">
+        <label for="freestyle">자유형</label>
+        <input type="checkbox" name="swim" id="frog" value="frog">
+        <label for="frog">평영</label>
+        <input type="checkbox" name="swim" id="backstroke" value="backstroke">
+        <label for="backstroke">배영</label>
+        <input type="checkbox" name="swim" id="butterfly" value="butterfly">
+        <label for="butterfly">접영</label>
+        <input type="submit" value="선택">
+    </form>
+
+    <h3># input 태그의 form 속성으로 어느 폼 소속인지 지정할 수 있다(form 내부에 안넣어도된다는것)</h3>
+
+    <form id="info"></form>
+
+    Age : <input type="text" form ="info" name="age"><br>
+    phone : <input type="text"form="info" name="phone"><br>
+    <input type="submit" form="info" value="submit"><br>
+
+    <!-- 문제 풀기 -->
+    <hr>
+
+    <form id = "regist"></form>
+
+    <h2>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; River Cleanup Day</h2>
+    <h1>&emsp;&emsp;&nbsp;&nbsp;&nbsp; Volunteer Registration</h1>
+    <hr noshade width="550" align="left">
+    <table>
+        <tr>
+            <th>Full Name</th>
+            <td>
+                <input type="text" form="regist" name="Firstname">&nbsp;&nbsp;
+                <input type="text" form="regist" name=Lastname"><br>
+                <label for="Firstname">First Name</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <label for="Lastname">Last Name</label>
+            </td>
+        </tr>
+        <tr>
+            <th>Contact No.</th>
+            <td>
+                <input type="text" form="regist" name="AreaCode">
+                -
+                <input type="text" form="regist" name="PhoneNumber" ><br>
+                <label for="AreaCode">Area Code</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <label for="PhoneNumber">Phone Number</label>
+            </td>
+        </tr>
+        <tr>
+            <th>E-mail</th>
+            <td>
+                <input type="text" form="regist" name="mail" size="40" style = "color:rgba(156, 155, 155, 0.979)"   placeholder="ex:myname@example.com"><br>
+                <label for="mail">example@example.com</label>
+            </td>
+        </tr>
+        <tr>
+            <th>What time can<br> you work?</th>
+            <td>
+            <input type="checkbox" form="regist" name="Anytime" id="Anytime"><br>
+            <label for="Anytime">Any time</label><br>
+            <input type="checkbox" form="regist" name="8amtonoon" id="8amtonoon"><br>
+            <label for="8amtonoon">8am - Noon</label><br>
+            <input type="checkbox" form="regist" name="1to5pm" id="1to5pm"><br>
+            <label for="1to5pm">1 - 5pm</label><br>
+            <input type="checkbox" form="regist" name="otherwork" id="otherwork"><br>
+            <label for="otherwork">Food other</label><br>
+            </td>
+        </tr>
+        <tr>
+            <th>Interested in:</th>
+            <td>
+            <input type="radio" form="regist" name="Cleaning" id="Cleaning"><br>
+            <label for="Cleaning">Cleaning</label><br>
+            <input type="radio" form="regist" name="Transportation" id="Transportation"><br>
+            <label for="Transportation">Transportation</label><br>
+            <input type="radio" form="regist" name="WhereverNeeded" id="WhereverNeeded"><br>
+            <label for="WhereverNeeded">Wherever Needed</label><br>
+            <input type="radio" form="regist" name="FoodService" id="FoodService"><br>
+            <label for="FoodService">Food Service</label><br>
+            <input type="radio" form="regist" name="FirstAid" id="FirstAid"><br>
+            <label for="FirstAid">First Aid</label><br>
+            <input type="radio" form="regist" name="Other" id="Other"><br>
+            <label for="Other">Other</label><br>
+            </td>
+        </tr>
+        <tr>
+            <th>Comments</th>
+            <td><textarea cols="50" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2" style = "text-align : center">  
+                <input type="submit" form="regist" style ="padding: 15px;" value="Submit Form"><br>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

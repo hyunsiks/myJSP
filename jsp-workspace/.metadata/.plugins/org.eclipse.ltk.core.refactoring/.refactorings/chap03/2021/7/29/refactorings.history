@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;chap03/WebContent/encording&apos; to &apos;encoding&apos;" description="Rename resource &apos;encording&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/encording" name="encoding" stamp="1626394706515" updateReferences="true"/>
+</session>

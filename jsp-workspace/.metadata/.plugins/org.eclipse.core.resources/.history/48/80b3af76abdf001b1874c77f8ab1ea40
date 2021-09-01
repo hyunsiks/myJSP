@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_링크</title>
+</head>
+<body>
+
+    <h3># 링크(Link)</h3>
+
+    <p>
+        - a태크
+        - 자바스크립트
+    </p>
+    
+    <h3># 외부 페이지로 링크 걸기</h3>
+
+    <a href="http://naver.com">네이버로</a>
+    <a href="http://comic.naver.com">네이버 웹툰으로</a>
+    <a href="http://comic.naver.com" target="_black">네이버 웹툰으로(새탭)</a>
+    <a href="naver.com">네이버로?</a> <!--상대경로이기 때문에 안됨-->
+
+    <h3># 내부 페이지로 링크 걸기</h3>
+    
+    1. <a href="./01_HTML이란.html">HTML이란</a><br>
+    2. <a href="02_제목과 문단.html">제목과문단</a><br>
+
+    <hr>
+    <a href="./04_속성.html">이전으로</a>
+    <a href="">다음으로</a>
+
+    <h3># 페이지의 특정 부분으로 링크 걸기</h3>
+
+    <p>
+        페이지 내부 원하는 요소의 ID속성을 이용하면 그 요소가 
+        보이는 화면으로 링크를 걸 수 있다
+    </p>
+
+    <a href="#chap01">챕터1</a><br>
+    <a href="#chap02">챔터2</a><br>
+    <a href="#chap03">챕터3</a><br>
+
+    <hr>
+
+    1. 다른 사이트의 id를 이용해서도 링크를 쓸수 있다</a>
+
+    <hr>
+
+    <h3># 자바스크립트로 링크 보내기</h3>
+
+    <p>
+        한미 북핵수석 협의 등 대북 <a href ="">현안</a> 논의를 위해 방한 중인 성 
+        김 미 대북특별대표는 22일 오후 문재인 대통령을 예방해 전날부터
+        <b onclick="b_link()">진행된 실무급 논의</b> 내용을 전달한다. 이날 오전 김 대표는 이인영
+        통일부 장관과 만난 자리에서, 이 <i onmouseover="location.href='http://naver.com'">장관</i>이 이산가족 상봉·금강산 
+        방문 등의 아이디어를 제시하자 "협조하고 싶다"는 뜻도 밝혔다. 
+        양국은 북한이 불만을 표해온 워킹그룹도 종료키로 의견을 모았다.
+    </p>
+
+    <script>
+        function b_link(){
+            url = "http://google.com";
+            location.href = url;
+        }
+    </script>
+
+    <P>
+        <h1 id = "chap01">Chapter 01</h1>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+        <hr>
+        <h1 id = "chap02">Chapter 02</h1>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+        <hr>>
+       <h1 id = "chap03">Chapter 03</h1>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+       <p> Common sense is not so common.</p>
+    </P>
+    
+</body>
+</html>

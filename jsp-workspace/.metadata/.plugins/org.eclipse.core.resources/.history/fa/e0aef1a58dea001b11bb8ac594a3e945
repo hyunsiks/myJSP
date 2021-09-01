@@ -1,0 +1,41 @@
+package chap08.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class DispatcherServlet extends HttpServlet{
+
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		//무슨 주소를 가지고 들어왔는지 확인해보는 메서드
+		//System.out.println(req.getRequestURI());
+		
+		//chap08/aaa 로 들어오면 /WEB-INF/a.jsp
+		//chap08/bbb 로 들어오면 b.jsp
+		String urlName = req.getRequestURI();
+		String firstName = urlName.substring(0, urlName.length() - 3);
+		urlName = (urlName.substring(urlName.length() - 3, urlName.length()));
+		
+		if(urlName.length() == 3 && firstName.charAt(firstName.length()) == '/') {
+			if((urlName.charAt(0) >='a' && urlName.charAt(0) <= 'z') && 
+					(urlName.charAt(0) == urlName.charAt(1)) &&
+					urlName.charAt(1) == urlName.charAt(2) &&
+					urlName.charAt(2) == urlName.charAt(0)) {
+				
+				urlName = firstName+(urlName.charAt(0));
+			}else {
+				urlName = firstName + urlName;
+			}
+		}else {
+			urlName = firstName + urlName;
+		}
+		
+		System.out.println(urlName);
+		req.getRequestDispatcher("WEB-INF/page/" + urlName +".jsp").forward(req, resp);
+	}
+}
